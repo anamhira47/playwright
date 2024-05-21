@@ -1,8 +1,9 @@
 name: "publish release - driver"
 
 on:
-  release:
-    types: [published]
+ push:
+    branches:
+    - main
 
 env:
   ELECTRON_SKIP_BINARY_DOWNLOAD: 1
@@ -11,7 +12,7 @@ jobs:
   publish-driver-release:
     name: "publish playwright driver to CDN"
     runs-on: ubuntu-20.04
-    if: github.repository == 'microsoft/playwright'
+    if: github.repository == 'anamhira47/playwright'
     permissions:
       id-token: write  # This is required for OIDC login (azure/login) to succeed
       contents: read   # This is required for actions/checkout to succeed

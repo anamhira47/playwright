@@ -5,7 +5,7 @@ set +x
 trap "cd $(pwd -P)" EXIT
 cd "$(dirname "$0")"
 
-AZ_STORAGE_ACCOUNT="playwright2"
+AZ_STORAGE_ACCOUNT="anamplaywright"
 PACKAGE_VERSION=$(node -p "require('../../package.json').version")
 
 az storage blob upload -c builds --auth-mode login --account-name ${AZ_STORAGE_ACCOUNT} -f ./output/playwright-${PACKAGE_VERSION}-mac.zip -n "${AZ_UPLOAD_FOLDER}/playwright-${PACKAGE_VERSION}-mac.zip"
