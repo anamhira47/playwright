@@ -160,7 +160,7 @@ test('Intercept network requests', async ({ page }) => {
   await page.goto('http://todomvc.com');
 });
 ```
-# Edited package.json for custom driver upload script
+# Edited package.json for custom driver upload scriptf
 ## Resources
 
 * [Documentation](https://playwright.dev/docs/intro)
