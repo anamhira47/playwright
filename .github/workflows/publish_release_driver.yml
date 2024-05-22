@@ -16,7 +16,7 @@ jobs:
     permissions:
       id-token: write  # This is required for OIDC login (azure/login) to succeed
       contents: read   # This is required for actions/checkout to succeed
-    environment: allow-publish-driver-to-cdn # This is required for OIDC login (azure/login)
+  
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
