@@ -24,4 +24,7 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            az account show
+          echo "Creating dummy text file..."
+          echo "This is a dummy file for Azure Blob Storage upload." > dummy.txt
+          echo "Uploading dummy text file to Azure Blob Storage..."
+          az storage blob upload -c builds --auth-mode login --account-name anamplaywright -f dummy.txt -n driver/dummy.txt"
