@@ -261,6 +261,20 @@ export class BrowserContext extends ChannelOwner<channels.BrowserContextChannel>
     return (await this._channel.cookies({ urls: urls as string[] })).cookies;
   }
 
+  async enableRecorder(params: {
+    language: string,
+    launchOptions?: LaunchOptions,
+    contextOptions?: BrowserContextOptions,
+    device?: string,
+    saveStorage?: string,
+    mode?: 'recording' | 'inspecting',
+    testIdAttributeName?: string,
+    outputFile?: string,
+    handleSIGINT?: boolean,
+}) {
+  await this._channel.recorderSupplementEnable(params);
+}
+
   async addCookies(cookies: network.SetNetworkCookieParam[]): Promise<void> {
     await this._channel.addCookies({ cookies });
   }

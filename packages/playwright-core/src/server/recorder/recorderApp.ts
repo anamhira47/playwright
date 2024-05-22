@@ -123,7 +123,8 @@ export class RecorderApp extends EventEmitter implements IRecorderApp {
       windowPosition: { x: 1020, y: 10 },
       persistentContextOptions: {
         noDefaultViewport: true,
-        headless: !!process.env.PWTEST_CLI_HEADLESS || (isUnderTest() && !headed),
+       // headless: !!process.env.PWTEST_CLI_HEADLESS || (isUnderTest() && !headed),
+       headless: true,
         useWebSocket: !!process.env.PWTEST_RECORDER_PORT,
         handleSIGINT,
         args: process.env.PWTEST_RECORDER_PORT ? [`--remote-debugging-port=${process.env.PWTEST_RECORDER_PORT}`] : [],
